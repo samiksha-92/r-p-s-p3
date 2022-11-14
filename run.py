@@ -39,7 +39,7 @@ def main():
 
     print()
 
-    while user_choice < 1 or > 3:
+    while user_choice < 1 or user_choice > 3:
         """
         Check if the user's choice is invalid or valid
 
@@ -55,7 +55,7 @@ def main():
         choice = "SCISSORS"
 
     print (f"The user's choice is {choice}")  
-                 
+
         
 
 
