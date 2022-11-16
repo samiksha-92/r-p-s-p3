@@ -64,12 +64,28 @@ def main():
     comp_choice = comp_decision()
 
     if comp_choice == 1:
-        opp_choice = "ROCK 🪨 "
+        opp_choice = "ROCK 🪨"
     elif comp_choice == 2:
-        opp_choice = "Paper 📄"  
+        opp_choice = "PAPER 📄"  
     else:
         opp_choice = "SCISSORS ✂️"      
 
     print(f"The Computer has chosen {opp_choice}")  
-    
 
+    if((choice == "PAPER 📄" and opp_choice == "ROCK 🪨") or (choice == "ROCK 🪨" and opp_choice == "PAPER 📄")):
+        print("PAPER WINS")
+        outcome = "PAPER"
+    elif((choice == "SCISSORS ✂️" and opp_choice == "ROCK 🪨") or (choice == "ROCK 🪨" and opp_choice == "SCISSORS ✂️")):
+        print("ROCK WINS")
+        outcome = "ROCK"
+    elif ((choice == "PAPER 📄" and opp_choice == "SCISSORS ✂️") or (choice == "SCISSORS" and opp_choice == "PAPER 📄")):
+        print("SCISSORS WINS")
+        outcome = "SCISSORS"
+    else:
+        print("it's a tie")
+        outcome = "TIE"
+
+      
+
+
+main()
