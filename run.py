@@ -10,6 +10,7 @@ def main():
 
     """
 
+
     def player_name():
         """
         This functions inputs the name of the user as a string
@@ -26,6 +27,22 @@ def main():
         """
         computer_choice = random.randint(1,3)
         return computer_choice
+
+    def winning_message():
+
+        """
+        This function returns a random message when the player wins a round
+
+        """
+        win_list = ["The extra energy required to make another effort is the secret of winning.",
+        "Go all in for what you want and you shall win", "Everyone has the will to win but only have the coirage to prepare to win, You are one of them", 
+        "One must always play fairly when one has the winning cards.",
+        "Winning does not always mean being first. Winning means you are doing better than you have ever done before."
+        ]
+
+        message = random.choice(win_list)
+        return message
+
 
     player = player_name()
     print(f"Hi {player},How are you doing today 😊")
@@ -72,20 +89,55 @@ def main():
 
     print(f"The Computer has chosen {opp_choice}")  
 
-    if((choice == "PAPER 📄" and opp_choice == "ROCK 🪨") or (choice == "ROCK 🪨" and opp_choice == "PAPER 📄")):
-        print("PAPER WINS")
+    if((choice == "PAPER 📄" and opp_choice == "ROCK 🪨") or (choice =="ROCK 🪨" and opp_choice == "PAPER 📄")):
         outcome = "PAPER"
+        print("PAPER WINS")
     elif((choice == "SCISSORS ✂️" and opp_choice == "ROCK 🪨") or (choice == "ROCK 🪨" and opp_choice == "SCISSORS ✂️")):
-        print("ROCK WINS")
         outcome = "ROCK"
-    elif ((choice == "PAPER 📄" and opp_choice == "SCISSORS ✂️") or (choice == "SCISSORS" and opp_choice == "PAPER 📄")):
-        print("SCISSORS WINS")
-        outcome = "SCISSORS"
-    else:
-        print("it's a tie")
+        print("ROCK WINS")
+    elif (choice == opp_choice):
         outcome = "TIE"
+        print("IT'S A TIE")
+    else:
+        outcome = "SCISSORS"
+        print("SCISSORS WIN")
+
+    score = 0
+    num_ties = 0
+    computer_scoreboard = 0 
+    player_win_quote = winning_message()  
+
+    if outcome == "TIE":
+        num_ties = num_ties + 1   
+    elif outcome == choice:
+        score += 1
+        print("Player wins the round")
+    else:
+        computer_scoreboard += 1
+        print("Computer wins the round")
+
+    print(f"{player} your score is : {score}")
+
+    print(f"Computer score is : {computer_scoreboard}")
+
+    print(f" tie score is :{num_ties}")
+
+    if computer_scoreboard > score:
+        print(f"{player_win_quote}")
+    else:
+        print(f"{encourage_message}")    
+    
+        
+
+
+
+main()
+
+
+
 
       
 
 
-main()
+
+
