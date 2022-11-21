@@ -89,26 +89,27 @@ def main():
 
     print(f"The Computer has chosen {opp_choice}")  
 
-    if((choice == "PAPER 📄" and opp_choice == "ROCK 🪨") or (choice =="ROCK 🪨" and opp_choice == "PAPER 📄")):
-        outcome = "PAPER"
+    if((choice == "PAPER 📄" and opp_choice == "ROCK 🪨") or (choice == "ROCK 🪨" and opp_choice == "PAPER 📄")):
+        outcome = "PAPER 📄"
         print("PAPER WINS")
     elif((choice == "SCISSORS ✂️" and opp_choice == "ROCK 🪨") or (choice == "ROCK 🪨" and opp_choice == "SCISSORS ✂️")):
-        outcome = "ROCK"
+        outcome = "ROCK 🪨"
         print("ROCK WINS")
     elif (choice == opp_choice):
         outcome = "TIE"
         print("IT'S A TIE")
     else:
         outcome = "SCISSORS"
-        print("SCISSORS WIN")
-
+        print("SCISSORS WIN ✂️")
+    
+    print()
     score = 0
     num_ties = 0
     computer_scoreboard = 0 
     player_win_quote = winning_message()  
 
     if outcome == "TIE":
-        num_ties = num_ties + 1   
+        num_ties += 1 
     elif outcome == choice:
         score += 1
         print("Player wins the round")
@@ -116,16 +117,22 @@ def main():
         computer_scoreboard += 1
         print("Computer wins the round")
 
+    print()
     print(f"{player} your score is : {score}")
+
+    print()
 
     print(f"Computer score is : {computer_scoreboard}")
 
+    print()
+
     print(f" tie score is :{num_ties}")
 
-    if computer_scoreboard > score:
+    if score > computer_scoreboard:
         print(f"{player_win_quote}")
     else:
-        print(f"{encourage_message}")    
+        print("Ready to take down the computer one more time 💪")    
+        
     
         
 
