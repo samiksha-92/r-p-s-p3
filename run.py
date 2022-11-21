@@ -1,5 +1,9 @@
 import random
 
+"""
+Imports random modeule to perform functions
+"""
+
 def main():
     """
     The main function invokes smaller functions and conditional statements
@@ -38,9 +42,6 @@ def main():
         message = random.choice(win_list)
         return message
 
-    
-
-        
         player = player_name()
         print(f"Hi {player},How are you doing today 😊")
         print("~~~~~ WELCOME TO THE GAME OF R-P-S ~~~~~")
@@ -62,10 +63,6 @@ def main():
             print()
 
             while user_choice < 1 or user_choice > 3:
-                """
-                Check if the user's choice is invalid or valid
-
-                """
                 print("Invalid response")
                 user_choice = int(input("Please select 1,2 or 3"))
 
